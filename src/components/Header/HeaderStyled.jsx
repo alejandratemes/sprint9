@@ -2,30 +2,52 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     max-width: 100%; 
-    margin: 0 auto; 
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #F7DED8;
-    color: white;
-    padding: 2em;
+    color: #F28A6C;
+    padding: 1em;
     
-        .h1 {
-            text-decoration: none;
-            color: #F28A6C;
-            font-size: 1em;
-            margin: 0;
+        .logo {
+            height: 4em;
+            @media (max-width: 768px) {
+                max-height: 3em;
+            }
+            @media (max-width: 576px) {
+                max-height: 2em;
+                max-width: 17em;
+            }
+        }
+
+        img {
+            height: 1.5em;
         }
 
         div {
             display: flex;
-            gap: 1em;
+            gap: 0.5em;
+        }
+
+        .navbar {
+            margin-right: 4em;
+
+            @media (max-width: 768px) {
+                margin-right: 1em;
+            }
+        }
+
+        .web-title {
+            display: block;
+        }
+
+        h5{
+            margin: 0 1em;
         }
 
         .link {
-            color: white; 
+            color: #F28A6C;
             text-decoration: none;
             font-size: 16px;
-            margin-left: 10px;
         }
 `;
