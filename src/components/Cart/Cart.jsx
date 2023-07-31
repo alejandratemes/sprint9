@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useCartContext } from "./CartContext";
 import { Link } from "react-router-dom";
-/*import { Container, CartItem } from "./CartStyled";*/
+import { Container, CartList, CartSummary, CartItem } from "./CartStyled";
 
 const Cart = () => {
   const { cartItems, setCartItems } = useCartContext();
@@ -39,34 +39,38 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <Container>
       <h2>Carrito de Compras</h2>
-      {cartItems.length === 0 ? (
-        <p>Tu carrito está vacío. ¡Agrega productos!</p>
-      ) : (
-        <>
-          {cartItems.map((item) => (
-            <div key={item.id}>
-              <img src={item.image} alt={item.title} />
-              <div className="item-details">
-                <h3>{item.title}</h3>
-                <p>Precio: ${item.price}</p>
-                <p>Cantidad: {item.quantity}</p>
-                <div className="quantity-controls">
-                  <button onClick={() => decreaseQuantity(item.id)}>-</button>
-                  <button onClick={() => increaseQuantity(item.id)}>+</button>
-                  <button onClick={() => removeItem(item.id)}>Eliminar</button>
+      <CartList>
+        {cartItems.length === 0 ? (
+          <p>Tu carrito está vacío. ¡Agrega productos!</p>
+        ) : (
+          <>
+            {cartItems.map((item) => (
+              <CartItem key={item.id}>
+                <img src={item.image} alt={item.title} />
+                <div className="item-details">
+                  <h3>{item.title}</h3>
+                  <p>Precio: ${item.price}</p>
+                  <p>Cantidad: {item.quantity}</p>
+                  <div className="quantity-controls">
+                    <button onClick={() => decreaseQuantity(item.id)}>-</button>
+                    <button onClick={() => increaseQuantity(item.id)}>+</button>
+                    <button onClick={() => removeItem(item.id)}>Eliminar</button>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </CartItem>
+            ))}
+          </>
+        )}
+      </CartList>
+      <CartSummary>
           <p>Total: ${totalPrice}</p>
           <Link to="/checkout">
             <button>Finalizar Compra</button>
           </Link>
-        </>
-      )}
-    </div>
+      </CartSummary>
+    </Container>
   );
 };
 

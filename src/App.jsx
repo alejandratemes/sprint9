@@ -11,6 +11,7 @@ import LogIn from "./components/LogIn/LogIn";
 import { AuthProvider} from "./services/authContext";
 import React from "react";
 import Cart from "./components/Cart/Cart";
+import CheckOut from "./components/Checkout/CheckOut";
 import { CartProvider } from "./components/Cart/CartContext";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
                   <Route path="/signup" element={<SignUp/>} />
                   <Route path="/" element={<LogIn/>} />
                   <Route path="/cart" element={<Cart/>} />
+                  <Route path="/checkout" element={<CheckOut/>} />
                 </Routes>
                 <Footer/>
             </Router>
