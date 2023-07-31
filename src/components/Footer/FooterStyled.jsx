@@ -5,8 +5,12 @@ export const Container = styled.nav`
     bottom: 0;
     left: 0;
     width: 100%;
-    background: #F0f0f0;
+    background: #F6DDD8;
     padding: 8px 20px;
+
+    @media (max-width: 768px) {
+        background: none;
+    }
 
         ul {
             list-style: none;

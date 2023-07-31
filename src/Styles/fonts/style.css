@@ -1,9 +1,0 @@
-@font-face {
-    font-family: 'Kooka';
-    src: local('Kooka Regular Condensed'), local('Kooka-Regular-Condensed'),
-        url('Kooka-RegularCondensed.woff2') format('woff2'),
-        url('Kooka-RegularCondensed.woff') format('woff'),
-        url('Kooka-RegularCondensed.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }

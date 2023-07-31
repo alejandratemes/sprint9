@@ -7,16 +7,28 @@ export const Container = styled.div`
     justify-content: center;
     gap: 1em;
     margin: 5em 0em;
+
+    @media (max-width: 1220px) {
+        margin: 3em 0em 8em 0em;
+        gap: 5em;
+    }
 `;
 
 export const Item = styled.div`
     display: flex;
     justify-content: center;
     width: 24%;
-    margin-bottom: 20px;
     height: 35em;
+    margin-bottom: 1em;
 
-    
+    @media (max-width: 1220px) {
+        width: 35%;
+        height: 25em;
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+
     .link {
         text-decoration: none; 
         color: black; 
@@ -26,8 +38,16 @@ export const Item = styled.div`
     }
 
     img {
-        max-width: 25em;
+        max-width: 90%;
         max-height: 25em;
+
+        @media (max-width: 768px) {
+            max-height: 17em;
+        }
+        @media (max-width: 576px) {
+            max-height: 20em;
+            max-width: 25em;
+        }
     }
 
     h3, p {
@@ -36,4 +56,6 @@ export const Item = styled.div`
         font-size: 0.8em;
         text-align: center;
     }
+
+
 `;
